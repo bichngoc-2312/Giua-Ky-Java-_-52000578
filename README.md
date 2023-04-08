@@ -15,9 +15,7 @@ Cấu trúc mã cũng bao gồm các cấu hình cần thiết cho Spring Boot, 
 - Bảng SDK: version 18.0.2 (nếu cần)
 - Mở link http://localhost:8080/ bằng trình duyệt web
 - Tài khoản để login:
-
       Tên tài khoản: bichngoc
-      
       Password: 123
 ### 4. Entity-relationship diagram for the database. 
 Link: https://drive.google.com/drive/folders/1Q7KGDlz2RTQLqp39eKduthZ_WjYxYB96?usp=share_link
