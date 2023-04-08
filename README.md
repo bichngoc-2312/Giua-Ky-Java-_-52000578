@@ -4,6 +4,7 @@
 ### 3. Các bước cần thiết để chạy ứng dụng:
 - Bật xampp
 - Run bài bằng ứng dụng Intellij.
+- Bảng SDK: version 18.0.2 (nếu cần)
 - Mở link http://localhost:8080/ bằng trình duyệt web
 - Tài khoản để login:
       Tên tài khoản: bichngoc
