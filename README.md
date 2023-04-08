@@ -1,6 +1,12 @@
 ## Giua-Ky-Java-_-52000578
 ### I'm Lâm Bích Ngọc
 ### MSSV: 52000578
+### 1. Các nguyên tắc, mẫu phát triển phần mềm
+và thực tiễn đang được áp dụng.
+Dependency Injection: Lớp AppController sử dụng Dependency Injection để đưa các thể hiện của các lớp ProductService và CartService vào hàm tạo của nó. Điều này làm cho lớp có nhiều mô-đun hơn và dễ kiểm tra hơn, vì nó có thể dễ dàng hoán đổi với các triển khai mô phỏng hoặc sơ khai.
+
+Tách các mối quan tâm: Lớp AppController phân tách các mối quan tâm bằng cách có các phương thức riêng biệt để xử lý đăng nhập, thêm sản phẩm vào giỏ hàng, cập nhật các mặt hàng trong giỏ hàng và thực hiện thanh toán. Điều này làm cho mã dễ đọc, bảo trì và kiểm tra hơn.
+
 ### 2. Cấu trúc mã:
 Mô hình bao gồm các thực thể (Sản phẩm và Cart) và các dịch vụ (ProductService,  và CartService) xử lý logic để truy xuất.
 
