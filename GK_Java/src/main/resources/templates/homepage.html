@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #b4efb4;
+        }
+        .card-img-top {
+            height: 300px; /* Thiết lập chiều cao của khung ảnh */
+            object-fit: cover; /* Thiết lập giá trị của thuộc tính object-fit */
+            object-position: center;
+        }
+        h1 {
+            color: hotpink;
+            font-weight: bold;
+            text-align: center;
+            font-size: 80px;
+            text-shadow: 2px 2px 5px #111010
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <h1>MY SHOP</h1>
+    <form class="form-group" th:action="@{/search}" method="get">
+        <label for="search"></label>
+        <div class="input-group">
+            <input type="text" class="form-control" id="key" name="key" placeholder="Search...">
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-search"></i>Search
+                </button>
+            </div>
+        </div>
+    </form>
+    <a th:href="@{/add-product}" class="btn btn-success mb-3" method="post">THÊM SẢN PHẨM</a>
+    <a th:href="@{/cart}" class="btn btn-danger mb-3">GIỎ HÀNG</a>
+    <div class="row">
+        <div class="col-md-6" th:each="product : ${products}">
+            <div class="card mb-3">
+                <img class="card-img-top" th:src="*{'data:image/jpeg;base64,'+{product.image}}" >
+                <div class="card-body d-flex">
+                    <div>
+                        <h5 class="card-title" th:text="${product.name}"></h5>
+                        <p class="card-text" th:text="${product.price}"></p>
+                    </div>
+                    <div class="ml-auto">
+                        <form th:action="@{'/detail/' + ${product.id}}" method="get">
+                            <button type="submit" class="btn btn-info">
+                                <i class="fas fa-info-circle"></i> Chi tiết
+                            </button>
+                        </form>
+                        <form th:action="@{'/delete/' + ${product.id}}" method="post">
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fas fa-trash"></i>Xóa
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
